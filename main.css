@@ -51,15 +51,19 @@ body {
 
 #avatar-box{
     aspect-ratio: 1 / 1;
-    max-width: 60%;
+    max-width: 50%;
     justify-content: center;
 }
 
 #avatar-info-box{
-    flex: 3 0 0;
+    flex: 1 1 0;
 }
 
 #bio-box{
+    flex: 2 1 0;
+}
+
+#personal-details-box{
     flex: 2 1 0;
 }
 
@@ -73,9 +77,10 @@ p {
     font-family: 'Cinzel';
 }
 
-
-#personal-details-box{
-    flex: 1 0 0;
+span { 
+    margin: 5px;
+    font-family: 'Cinzel';
+    white-space: nowrap;
 }
 
 #search_box{
@@ -108,3 +113,7 @@ p {
         flex-direction: row;
     }
 } */
+
+#name_label{
+    font-size: 1.2rem;
+}
