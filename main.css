@@ -12,8 +12,6 @@ body {
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     position: absolute;
-    width: 65%;
-    height: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -21,20 +19,92 @@ body {
 
 .inner-box{
     border-radius: 16px;
-    padding: 20px;
+    padding: 10px;
     margin: 5px;
     box-shadow: 0 4px 30 px rgba(255, 255, 255, 0.4);  
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-#info{
-    flex-grow: 4;
-    background: rgba(123, 26, 26, 0.77);
+.h-flex{
+    display: flex;
+    align-content: flex-start;
 }
 
-#form{
-    flex-grow: 1;
+.v-flex{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#info-container{
+    background: rgba(23, 68, 181, 0.77);
+}
+
+#form-container{
     background-color: rgba(70, 70, 70, 0.5);
+    justify-content: center;
 }
+
+#avatar-box{
+    aspect-ratio: 1 / 1;
+    max-width: 60%;
+    justify-content: center;
+}
+
+#avatar-info-box{
+    flex: 3 0 0;
+}
+
+#bio-box{
+    flex: 2 1 0;
+}
+
+#avatar{
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+p { 
+    margin: 5px;
+    font-family: 'Cinzel';
+}
+
+
+#personal-details-box{
+    flex: 1 0 0;
+}
+
+#search_box{
+    margin: 3px;
+}
+
+#search_button{
+    margin: 3px;
+    background-color: rgba(23, 68, 181, 1);
+    border-color: white;
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+/* @media all and (max-width: 1000px) {
+    #avatar-info-box{
+        flex-direction: column;
+    }
+    #avatar-box{
+        flex-direction: row;
+    }
+    #info-box{
+        flex-direction: row;
+    }
+} */

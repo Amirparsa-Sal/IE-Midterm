@@ -2,17 +2,41 @@
 <html>
     <!-- add style sheets-->
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Orbitron&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
 <head>
     <title>My Github</title>
 </head>
 <body>
     <div class="outer-box">
-        <div class="inner-box" id="info"> 
-            <p>This is info</p> 
+        <div class="inner-box" id="info-container"> 
+            <div class="h-flex" id="avatar-info-box">
+                <div class="v-flex" id="avatar-box">
+                    <img src="https://avatars.githubusercontent.com/u/60196448?v=4" id="avatar">
+                </div>
+                <div class="v-flex" id="info-box">
+                    <div class="v-flex" id="personal-details-box">
+                        <p> Amirparsa Sal</p>
+                        <p> Amirparsa.com</p>
+                        <p> Tehran, Iran</p>
+                    </div>
+                    <div class="v-flex" id="lang-info-box">
+                        <p> Languages:</p>
+                        <p> Python</p>
+                        <p> C</p>
+                        <p> C++</p>
+                    </div>
+                </div>
+            </div>
+            <div class="v-flex" id="bio-box"> 
+                <p>This is bio dsnjdf mk \sd jnksd  \n  sdjkns dsjk nsd sd jkns ds jnkb sdjkn </p>
+            </div>
         </div>
 
-        <div class="inner-box" id="form"> 
-            <p>This is form</p>
+        <div class="inner-box" id="form-container"> 
+            <input type="text" id="search_box">
+            <input type="button" id='search_button' value="Submit">
         </div>
     </div>
 </body>
