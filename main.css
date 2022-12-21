@@ -1,0 +1,40 @@
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('./images/oct.jpg');
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.outer-box{
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    position: absolute;
+    width: 65%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-box{
+    border-radius: 16px;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 0 4px 30 px rgba(255, 255, 255, 0.4);  
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    color: white;
+}
+
+#info{
+    flex-grow: 4;
+    background: rgba(123, 26, 26, 0.77);
+}
+
+#form{
+    flex-grow: 1;
+    background-color: rgba(70, 70, 70, 0.5);
+}
