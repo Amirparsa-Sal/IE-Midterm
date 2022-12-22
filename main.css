@@ -1,5 +1,5 @@
 body {
-    background-image: url('./images/oct2.webp');
+    background-image: url('./images/oct3.webp');
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -44,7 +44,7 @@ body {
 }
 
 #form-container{
-    background-color: rgba(70, 70, 70, 0.5);
+    background-color: rgba(41, 46, 48, 0.77);
     justify-content: center;
 }
 
@@ -73,12 +73,10 @@ body {
 
 p { 
     margin: 5px;
-    font-family: 'Cinzel';
 }
 
 span { 
     margin: 5px;
-    font-family: 'Cinzel';
     white-space: nowrap;
 }
 
@@ -92,6 +90,7 @@ span {
     border-color: white;
     color: white;
     display: inline-block;
+    font-family: 'Cinzel';
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -120,4 +119,15 @@ span {
 
 #name_label{
     font-size: 1.2rem;
+    font-family: 'Cinzel';
+}
+
+#lang_label{
+    font-size: 1rem;
+    font-family: 'Cinzel';
+}
+
+#blog_label:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
