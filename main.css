@@ -1,10 +1,9 @@
 body {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('./images/oct.jpg');
+    background-image: url('./images/oct2.webp');
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
     background-size:cover;
-    background-position: center;
     background-attachment: fixed;
 }
 
@@ -22,8 +21,8 @@ body {
     padding: 10px;
     margin: 5px;
     box-shadow: 0 4px 30 px rgba(255, 255, 255, 0.4);  
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(4.5px);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
     color: white;
     display: flex;
     flex-direction: column;
@@ -101,6 +100,11 @@ span {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#search_button:hover{
+    background-color: rgba(23, 68, 181, 0.8);
 }
 /* @media all and (max-width: 1000px) {
     #avatar-info-box{
