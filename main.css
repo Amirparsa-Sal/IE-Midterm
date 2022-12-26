@@ -1,3 +1,22 @@
+/*
+    I've set the margin of all <p> tags to 5px because the default margin is too high.
+*/
+p { 
+    margin: 5px;
+}
+
+/*
+    I've set the margin of all <span> tags to 5px because the default margin is too high.
+    I've set white-space to nowrap because I want the text to be on one line.
+*/
+span { 
+    margin: 5px;
+    white-space: nowrap;
+}
+
+/*
+    Designing the body of the page with a background image.
+*/
 body {
     background-image: url('./images/oct3.webp');
     -webkit-background-size:cover;
@@ -7,6 +26,28 @@ body {
     background-attachment: fixed;
 }
 
+/*
+    Just a general class for horizintal flexboxes.
+*/
+.h-flex{
+    display: flex;
+    align-content: flex-start;
+}
+
+/*
+    Just a general class for vertical flexboxes.
+*/
+.v-flex{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    The following code is for the outer box.
+    It is used to center the outerbox.
+    The outerbox is hidden and contains 2 innerboxes named #info-container and #form-container.
+*/
 .outer-box{
     background-color: rgba(0, 0, 0, 0);
     display: flex;
@@ -16,9 +57,15 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/*
+    The following code is for the inner boxes.
+    The inner boxes are used to design the info-container and form-container.
+    The info-container contains the avatar and the bio.
+    The form-container contains the search box and the search button.
+*/
 .inner-box{
     border-radius: 16px;
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
     box-shadow: 0 4px 30 px rgba(255, 255, 255, 0.4);  
     backdrop-filter: blur(3.5px);
@@ -28,63 +75,100 @@ body {
     flex-direction: column;
 }
 
-.h-flex{
-    display: flex;
-    align-content: flex-start;
-}
-
-.v-flex{
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
+/*
+    The following code is for the info-container.
+    The info-container contains the avatar and the bio.
+    I've just set its background color to a light blue with a slight opacity.
+*/
 #info-container{
     background: rgba(23, 68, 181, 0.77);
 }
 
+/*
+    The following code is for the form-container.
+    The form-container contains the search box and the search button.
+    I've just set its background color to a gray color with a slight opacity.
+    Also, the contant is justified to the center.
+
+*/
 #form-container{
     background-color: rgba(41, 46, 48, 0.77);
     justify-content: center;
 }
 
+/*
+    The following code is for avatar-info-box.
+    The avatar-info-box contains the avatar, info and the bio.
+    I've set it to expand to whatever space is needed.
+*/
+#avatar-info-box{
+    flex: 1 1 0;
+}
+
+/*
+    The following code is for the avatar-box.
+    The avatar-box contains the avatar.
+    I've set its aspect ratio to 1:1 because I want the avatar to be a square.
+    I've set its max-width to 50% because I want the avatar to be smaller than the info-box.
+    I've set its justify-content to center because I want the avatar to be centered.
+*/
 #avatar-box{
     aspect-ratio: 1 / 1;
     max-width: 50%;
     justify-content: center;
 }
 
-#avatar-info-box{
-    flex: 1 1 0;
-}
-
-#bio-box{
-    flex: 2 1 0;
-}
-
-#personal-details-box{
-    flex: 2 1 0;
-}
-
+/*
+    The following code is for the avatar.
+    I've set its max-width to 100% because I want the avatar to be responsive and fit the avatar-box.
+    I've set its border-radius to 16px because I want the avatar to have rounded corners.
+*/
 #avatar{
     max-width: 100%;
     border-radius: 16px;
 }
 
-p { 
-    margin: 5px;
+/*
+    name label is a <span> for the name of the user.
+    I've set its font-size to 1.2rem because I want it to be bigger than other info.
+    I've used 'Cinzel' font because I like it :)
+*/
+
+#name-label{
+    font-size: 1.2rem;
+    font-family: 'Cinzel';
 }
 
-span { 
-    margin: 5px;
-    white-space: nowrap;
+/*
+    lang
+*/
+#lang-label{
+    font-size: 1rem;
+    font-family: 'Cinzel';
 }
 
-#search_box{
+/*
+    blog label is a <span> for the blog of the user.
+    The follwoing code is to make it look like a link. (underline and pointer cursor)
+*/
+#blog-label:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*
+    search-box is the input box for the search.
+    I've set its margin to 3px because I want it to have a small gap from form-container.
+*/
+#search-box{
     margin: 3px;
 }
 
-#search_button{
+/*
+    search-button is the button for the search.
+    The following code is to make it look like a button. (rounded corners, blue background, white text, pointer cursor)
+*/
+#search-button{
     margin: 3px;
     background-color: rgba(23, 68, 181, 1);
     border-color: white;
@@ -102,32 +186,43 @@ span {
     cursor: pointer;
 }
 
-#search_button:hover{
+/*
+    The following code is to make the search-button look like a button when the mouse is hovering over it.
+    I've just set its background color to a darker blue.
+*/
+#search-button:hover{
     background-color: rgba(23, 68, 181, 0.8);
 }
-/* @media all and (max-width: 1000px) {
+
+/*
+    The following code is for the responsive design.
+    It changes the directions of the flexboxes to column and aligns the items to center if the screen width is less than 1000px.
+*/
+@media all and (max-width: 1000px) {
     #avatar-info-box{
         flex-direction: column;
+        align-items: center;
     }
     #avatar-box{
-        flex-direction: row;
+        flex-direction: column;
     }
     #info-box{
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
     }
-} */
-
-#name_label{
-    font-size: 1.2rem;
-    font-family: 'Cinzel';
-}
-
-#lang_label{
-    font-size: 1rem;
-    font-family: 'Cinzel';
-}
-
-#blog_label:hover{
-    text-decoration: underline;
-    cursor: pointer;
+    #bio-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    #personal-details-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    #lang-info-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    #bio-label{
+        text-align:center
+    }
 }

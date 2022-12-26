@@ -10,32 +10,32 @@ function httpGetAsync(theUrl, callback)
 }
 
 // get search button
-var searchButton = document.getElementById("search_button");
+var searchButton = document.getElementById("search-button");
 console.log(searchButton);
 // add event listener
 searchButton.addEventListener("click", function() {
     console.log("here");
     // get search input
-    var searchInput = document.getElementById("search_box");
+    var searchInput = document.getElementById("search-box");
     input = searchInput.value;
     // Send GET request to server
     httpGetAsync("https://api.github.com/users/" + input,
         function(response) {
             console.log(response);
             // set the name
-            var nameLabel = document.getElementById("name_label");
+            var nameLabel = document.getElementById("name-label");
             nameLabel.innerHTML = JSON.parse(response).name;
             // set the bio
-            var bioLabel = document.getElementById("bio_label");
+            var bioLabel = document.getElementById("bio-label");
             bioLabel.innerHTML = JSON.parse(response).bio;
             // set the location
-            var locationLabel = document.getElementById("loc_label");
+            var locationLabel = document.getElementById("loc-label");
             locationLabel.innerHTML = JSON.parse(response).location;
             // set the image
             var image = document.getElementById("avatar");
             image.src = JSON.parse(response).avatar_url;
             // set the blog
-            var blogLabel = document.getElementById("blog_label");
+            var blogLabel = document.getElementById("blog-label");
             blogLabel.innerHTML = JSON.parse(response).blog;
 
         }
