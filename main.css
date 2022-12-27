@@ -15,6 +15,12 @@ span {
 }
 
 /*
+    Just setting the font-family of the titles to 'Cinzel'.
+*/
+.title{
+    font-family: 'Cinzel';
+}
+/*
     Designing the body of the page with a background image.
 */
 body {
@@ -90,7 +96,13 @@ body {
     transition: width 2s;
 }
 
-#error-box{
+/*
+    The following code is for the error-box.
+    The error-box contains the error message.
+    I've just set its color to white and white-space to nowrap because I want the text to be on one line.
+*/
+#status-box{
+    margin: 5px;
     display: None;
     color: white;
     white-space: nowrap;
