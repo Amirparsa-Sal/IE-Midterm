@@ -1,3 +1,6 @@
+let error_rgba = [129, 7, 7, 0.77]
+let local_storage_rgba = [255, 215, 7, 0.77]
+
 function clearStatus(){
     var status_container = document.getElementById("status-container");
     var error_box = document.getElementById("status-box");
@@ -5,11 +8,11 @@ function clearStatus(){
     error_box.style.display = "None";
 }
 
-function displayStatus(text, r, g, b, a){
+function displayStatus(text, rgba){
     var status_container = document.getElementById("status-container");
     var error_box = document.getElementById("status-box");
     error_box.innerHTML = text;
-    status_container.style.backgroundColor = "rgba(" + r + ", " + g + ", " + b + ", " + a + ")";
+    status_container.style.backgroundColor = "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ", " + rgba[3] + ")";
     status_container.style.display = "flex";
     error_box.style.display = "inline-block";
 }
@@ -73,6 +76,19 @@ function fillInfo(data)
     }
 }   
 
+async function callAPI(url){
+    let response = await fetch(url);
+    // check for errors
+    if (!response.ok){
+        if (response.status == 404){
+            throw new Error("User not found");
+        }
+        throw new Error("Error: " + response.status);
+    }
+    // convert to json
+    return await response.json()
+}
+
 // get search button
 var searchButton = document.getElementById("search-button");
 console.log(searchButton);
@@ -90,16 +106,13 @@ searchButton.addEventListener("click", function() {
         var data = JSON.parse(window.localStorage.getItem(input));
         console.log(data)
         fillInfo(data);
-        displayStatus("Loaded from local storage!", 255, 215, 7, 0.77);
+        displayStatus("Loaded from local storage!", local_storage_rgba);
         return;
     }
-
     // create data dict to store info
     var data = {};
     // Send GET request to get info
-    fetch("https://api.github.com/users/" + input)
-    // convert to json
-    .then((response) => response.json())
+    callAPI("https://api.github.com/users/" + input)
     // fill info and update data dict to store info later in local storage
     .then((res) => {
         // update data dict
@@ -110,10 +123,8 @@ searchButton.addEventListener("click", function() {
         data["avatar_url"] = res.avatar_url;
         console.log(data)
         // Send GET request to get repos
-        return fetch("https://api.github.com/users/" + input + "/repos");
+        return callAPI("https://api.github.com/users/" + input + "/repos");
     })
-    // convert to json
-    .then((response) => response.json())
     // get the most common lang
     .then((repos) => {
         // sort the repos by push date
@@ -143,8 +154,9 @@ searchButton.addEventListener("click", function() {
                 mostCommonLangCount = langs[lang];
             }
         }
+        // fill other info
         fillInfo(data);
-        // set the most common lang
+        // fill the most common lang
         var langDiv = document.getElementById("lang-row");
         if (mostCommonLangCount == 0){
             langDiv.style.display = "None";
@@ -158,5 +170,11 @@ searchButton.addEventListener("click", function() {
         return data;
     })
     .then((data) => window.localStorage.setItem(input, JSON.stringify(data)))
-    .catch((error) => console.log(error));
+    .catch((error) => {
+        if (error instanceof TypeError){
+            displayStatus("Network error: " + error.message, error_rgba);
+            return;
+        }
+        displayStatus(error.message, error_rgba);
+    });
 });
