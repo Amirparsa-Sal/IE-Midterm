@@ -6,11 +6,11 @@ p {
 }
 
 /*
-    I've set the margin of all <span> tags to 5px because the default margin is too high.
+    I've set the margin of all <span> tags to 15px because the default margin is too high.
     I've set white-space to nowrap because I want the text to be on one line.
 */
 span { 
-    margin: 5px;
+    margin: 15px;
     white-space: nowrap;
 }
 
@@ -130,12 +130,10 @@ body {
     The following code is for the avatar-box.
     The avatar-box contains the avatar.
     I've set its aspect ratio to 1:1 because I want the avatar to be a square.
-    I've set its max-width to 50% because I want the avatar to be smaller than the info-box.
     I've set its justify-content to center because I want the avatar to be centered.
 */
 #avatar-box{
     aspect-ratio: 1 / 1;
-    max-width: 50%;
     justify-content: center;
 }
 
@@ -157,14 +155,6 @@ body {
 
 #name-label{
     font-size: 1.2rem;
-    font-family: 'Cinzel';
-}
-
-/*
-    lang
-*/
-#lang-label{
-    font-size: 1rem;
     font-family: 'Cinzel';
 }
 
