@@ -180,6 +180,13 @@ body {
 }
 
 /*
+    bio label is a <p> for the bio of the user.
+    I've set its white-space to pre-line because I want the bio to be on multiple lines.
+*/
+#bio-label{
+    white-space: pre-line;
+}
+/*
     search-box is the input box for the search.
     I've set its margin to 3px because I want it to have a small gap from form-container.
 */
