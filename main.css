@@ -46,11 +46,12 @@ body {
 /*
     The following code is for the outer box.
     It is used to center the outerbox.
-    The outerbox is hidden and contains 2 innerboxes named #info-container and #form-container.
+    The outerbox is hidden and contains 3 innerboxes named #status-container, #info-container and #form-container.
 */
 .outer-box{
     background-color: rgba(0, 0, 0, 0);
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -73,6 +74,26 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+}
+
+/*
+    The following code is for the status-container.
+    The status-container contains the status of the request (errors or caching in local storage).
+    I've just set its background color to a red color with a slight opacity.
+    Also, the contant is justified to the center.
+*/
+#status-container{
+    background-color: rgba(129, 7, 7, 0.77);
+    justify-content: center;
+    border-radius: 16px;
+    display: None;
+    transition: width 2s;
+}
+
+#error-box{
+    display: None;
+    color: white;
+    white-space: nowrap;
 }
 
 /*
