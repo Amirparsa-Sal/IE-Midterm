@@ -83,6 +83,8 @@ searchButton.addEventListener("click", function() {
     // get search input
     var searchInput = document.getElementById("search-box");
     input = searchInput.value;
+    // lower case the input
+    input = input.toLowerCase();
     // check if the data is in local storage
     if (localStorage.getItem(input) != null){
         var data = JSON.parse(window.localStorage.getItem(input));
@@ -100,7 +102,6 @@ searchButton.addEventListener("click", function() {
     .then((response) => response.json())
     // fill info and update data dict to store info later in local storage
     .then((res) => {
-        fillInfo(res);
         // update data dict
         data["name"] = res.name;
         data["bio"] = res.bio;
@@ -142,6 +143,7 @@ searchButton.addEventListener("click", function() {
                 mostCommonLangCount = langs[lang];
             }
         }
+        fillInfo(data);
         // set the most common lang
         var langDiv = document.getElementById("lang-row");
         if (mostCommonLangCount == 0){
