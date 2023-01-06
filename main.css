@@ -1,6 +1,18 @@
 /*
     I've set the margin of all <p> tags to 5px because the default margin is too high.
 */
+
+a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
 p { 
     margin: 5px;
 }
@@ -171,15 +183,6 @@ body {
 }
 
 /*
-    blog label is a <span> for the blog of the user.
-    The follwoing code is to make it look like a link. (underline and pointer cursor)
-*/
-#blog-label:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/*
     bio label is a <p> for the bio of the user.
     I've set its white-space to pre-line because I want the bio to be on multiple lines.
 */
@@ -193,6 +196,11 @@ body {
 #search-box{
     margin: 3px;
     text-align: center;
+}
+
+#blog-label{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /*

@@ -77,6 +77,7 @@ function fillInfo(data)
     }
     else{
         blogLabel.innerHTML = data.blog;
+        blogLabel.href = "http://" + data.blog;
         blogDiv.style.display = "flex";
     }
     // set the lang
